@@ -2,8 +2,8 @@
 
 namespace App\Commands;
 
-use Illuminate\Support\Facades\Http;
 use Illuminate\Console\Scheduling\Schedule;
+use Illuminate\Support\Facades\Http;
 use LaravelZero\Framework\Commands\Command;
 
 class StatsCommand extends Command
@@ -35,6 +35,7 @@ class StatsCommand extends Command
 
         if (! $response->ok()) {
             $this->warn('Failed to retrieve user statistics');
+
             return 1;
         }
 
