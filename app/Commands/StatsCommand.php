@@ -20,7 +20,7 @@ class StatsCommand extends Command
      *
      * @var string
      */
-    protected $description = 'Retrieve the Offset Earth statistics for a user';
+    protected $description = 'Retrieve the Ecologi statistics for a user';
 
     /**
      * Execute the console command.
@@ -31,7 +31,7 @@ class StatsCommand extends Command
     {
         $username = $this->argument('username');
 
-        $response = Http::get("https://public.offset.earth/users/{$username}/impact");
+        $response = Http::get("https://public.ecologi.com/users/{$username}/impact");
 
         if (! $response->ok()) {
             $this->warn('Failed to retrieve user statistics');
